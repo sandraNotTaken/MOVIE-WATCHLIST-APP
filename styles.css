@@ -1,0 +1,9 @@
+.movie-item {
+    margin: 1rem .5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.image-poster {
+    width: 100px;
+}
