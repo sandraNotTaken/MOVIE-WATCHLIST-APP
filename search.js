@@ -27,6 +27,8 @@ function searchMovie(query) {
     });
 }
 
+// ...existing code...
+
 function getMovieDetails(imdbID) {
     fetch(`https://www.omdbapi.com/?apikey=${apiKey}&i=${imdbID}`)
     .then(response => response.json())
@@ -64,6 +66,22 @@ function getMovieDetails(imdbID) {
         const plotSpan = movieElement.querySelector(".plot-text");
         if (plotSpan) plotSpan.textContent = fullPlot;
 
+        // Add watchlist button listener
+        const watchlistBtn = movieElement.querySelector(".add-watchlist");
+        watchlistBtn.addEventListener("click", () => {
+            addToWatchlist({
+                imdbID: data.imdbID,
+                title: data.Title,
+                poster: data.Poster,
+                rating: movieRatingsArray && movieRatingsArray.length > 0 ? movieRatingsArray[0].Value.split("/")[0] : "N/A",
+                runtime: data.Runtime,
+                genre: data.Genre,
+                plot: fullPlot
+            });
+            watchlistBtn.textContent = "✓ Added";
+            watchlistBtn.disabled = true;
+        });
+
         // Check if text exceeds 3 lines
         setTimeout(() => {
             const isOverflowing = plotSpan.scrollHeight > plotSpan.clientHeight;
@@ -90,4 +108,14 @@ function getMovieDetails(imdbID) {
         }, 0);
     })
     .catch(error => console.error("Error fetching movie details:", error));
+}
+
+function addToWatchlist(movie) {
+    let watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
+    
+    // Check if movie already exists
+    if (!watchlist.find(m => m.imdbID === movie.imdbID)) {
+        watchlist.push(movie);
+        localStorage.setItem("watchlist", JSON.stringify(watchlist));
+    }
 }
