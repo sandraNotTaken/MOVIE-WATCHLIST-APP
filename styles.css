@@ -5,6 +5,43 @@
     font-family: 'Inter', sans-serif;
 }
 
+#header {
+    background: url('bg-img.png') no-repeat center center/cover;
+    height: 208px;
+    padding: 16px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+}
+
+#header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    pointer-events: none;
+}
+
+#header h1 {
+    position: relative;
+    z-index: 1;
+    font-size: 48px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.watchlist-link a{
+    color: #fff;
+    font-weight: 700;
+    position: absolute;
+}
+
 .movie-item {
     margin: 1rem .5rem;
     display: flex;
@@ -14,7 +51,7 @@
     height: 150px;
 }
 
-.image-poster {
+.movie-poster {
     width: 99px;
     height: 147px;
 }
