@@ -14,7 +14,10 @@ function searchMovie(query) {
     .then(response => response.json())
     .then(data => {
         if (!data.Search) {
-            resultsContainer.textContent = "No results found.";
+            const msg = document.createElement('div');
+            msg.className = 'default-message';
+            msg.textContent = "No results found.";
+            resultsContainer.appendChild(msg);
             return;
         }
 
