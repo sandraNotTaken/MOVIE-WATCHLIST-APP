@@ -43,6 +43,20 @@
     list-style: none;
 }
 
+.default-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    color: #555;
+}
+
+.fa-film {
+    color: black;
+}
+
 .movie-item {
     margin: 1rem .5rem;
     display: flex;
