@@ -60,8 +60,10 @@
 }
 
 .fa-film {
-    color: black;
+    color: #DFDDDD;
     font-size: 4rem;
+    width: 70px;
+    height: 61.25px;
 }
 
 .movie-item {
