@@ -5,6 +5,12 @@
     font-family: 'Inter', sans-serif;
 }
 
+.header-div {
+    position: relative;
+    overflow: visible;
+    padding-bottom: 19px;
+}
+
 #header {
     background: url('bg-img.png') no-repeat center center/cover;
     height: 208px;
@@ -19,7 +25,8 @@
 
 #results-container {
     position: relative;
-}  
+    margin-top: 19px;
+}
 
 #header::before {
     content: '';
@@ -48,16 +55,20 @@
 }
 
 .search-box {
-    height: 38px;
+    padding: 1rem;
     width: 80%;
-    border-radius:3px;
-    display: block;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-shadow: #555;
+    position: absolute;
 }
 
 #search-button {
     border-left: 1px solid #555;
     background-color: #fff;
+    padding: .5rem;
 }
 
 .default-message {
