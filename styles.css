@@ -55,20 +55,23 @@
 }
 
 .search-box {
-    padding: 1rem;
+    height: 38px;
     width: 80%;
     border-radius: 3px;
     display: flex;
     align-items: center;
-    justify-content: center;
     box-shadow: #555;
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
 }
 
 #search-button {
-    border-left: 1px solid #555;
+    border:
     background-color: #fff;
-    padding: .5rem;
+    padding: .2rem;
 }
 
 .default-message {
