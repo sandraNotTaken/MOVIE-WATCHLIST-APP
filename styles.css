@@ -69,7 +69,7 @@
 }
 
 #search-button {
-    border:
+    border: none;
     background-color: #fff;
     padding: .2rem;
 }
